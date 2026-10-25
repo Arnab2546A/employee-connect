@@ -1,5 +1,6 @@
 import React from 'react'
 import TaskCounts from '../Others/TaskCounts/TaskCounts'
+import TaskCards from '../Others/TaskCards/TaskCards'
 const EmployeeDashboard = () => {
   return (
     <div className='min-h-screen px-4 py-8'>
@@ -7,6 +8,7 @@ const EmployeeDashboard = () => {
   Employee Dashboard
 </h1>
         <TaskCounts/>
+        <TaskCards/>
     </div>
   )
 }
