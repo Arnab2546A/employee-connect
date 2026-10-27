@@ -1,0 +1,256 @@
+
+const employee = [
+  
+  {
+    id: 2,
+    name: "Rahul Sharma",
+    email: "rahul@taskflow.com",
+    password: "Rahul@123",
+    role: "employee",
+    tasks: [
+      {
+        id: 101,
+        title: "Design Login Page",
+        employee: "Rahul Sharma",
+        description: "Create a responsive login page using React and Tailwind CSS.",
+        priority: "High",
+        dueDate: "2026-10-30",
+        estimatedTime: "5 hours",
+      },
+      {
+        id: 102,
+        title: "Fix Navbar Responsiveness",
+        employee: "Rahul Sharma",
+        description: "Make the navigation bar responsive on mobile devices.",
+        priority: "Moderate",
+        dueDate: "2026-11-02",
+        estimatedTime: "3 hours",
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Priya Singh",
+    email: "priya@taskflow.com",
+    password: "Priya@123",
+    role: "employee",
+    tasks: [
+      {
+        id: 103,
+        title: "Build Dashboard UI",
+        employee: "Priya Singh",
+        description: "Build a dashboard with summary cards and recent activity.",
+        priority: "High",
+        dueDate: "2026-10-31",
+        estimatedTime: "6 hours",
+      },
+      {
+        id: 104,
+        title: "Create Profile Card",
+        employee: "Priya Singh",
+        description: "Create a reusable employee profile card component.",
+        priority: "Low",
+        dueDate: "2026-11-05",
+        estimatedTime: "2 hours",
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: "Amit Verma",
+    email: "amit@taskflow.com",
+    password: "Amit@123",
+    role: "employee",
+    tasks: [
+      {
+        id: 105,
+        title: "Integrate Login API",
+        employee: "Amit Verma",
+        description: "Connect the login form to the authentication API.",
+        priority: "High",
+        dueDate: "2026-10-29",
+        estimatedTime: "4 hours",
+      },
+    ],
+  },
+  {
+    id: 5,
+    name: "Sneha Das",
+    email: "sneha@taskflow.com",
+    password: "Sneha@123",
+    role: "employee",
+    tasks: [
+      {
+        id: 106,
+        title: "Create Task Form",
+        employee: "Sneha Das",
+        description: "Build a form with title, description, priority and due date.",
+        priority: "High",
+        dueDate: "2026-10-30",
+        estimatedTime: "4 hours",
+      },
+      {
+        id: 107,
+        title: "Add Form Validation",
+        employee: "Sneha Das",
+        description: "Validate required fields and display helpful error messages.",
+        priority: "Moderate",
+        dueDate: "2026-11-03",
+        estimatedTime: "3 hours",
+      },
+    ],
+  },
+  {
+    id: 6,
+    name: "Vikram Patel",
+    email: "vikram@taskflow.com",
+    password: "Vikram@123",
+    role: "employee",
+    tasks: [
+      {
+        id: 108,
+        title: "Implement Search",
+        employee: "Vikram Patel",
+        description: "Add a search feature to filter tasks by title.",
+        priority: "Moderate",
+        dueDate: "2026-11-02",
+        estimatedTime: "3 hours",
+      },
+    ],
+  },
+  {
+    id: 7,
+    name: "Ananya Roy",
+    email: "ananya@taskflow.com",
+    password: "Ananya@123",
+    role: "employee",
+    tasks: [
+      {
+        id: 109,
+        title: "Design Reports Page",
+        employee: "Ananya Roy",
+        description: "Create a reports page displaying task summaries.",
+        priority: "Low",
+        dueDate: "2026-11-06",
+        estimatedTime: "5 hours",
+      },
+      {
+        id: 110,
+        title: "Style Status Badges",
+        employee: "Ananya Roy",
+        description: "Style badges for pending, in-progress and completed tasks.",
+        priority: "Moderate",
+        dueDate: "2026-11-04",
+        estimatedTime: "2 hours",
+      },
+    ],
+  },
+  {
+    id: 8,
+    name: "Karan Mehta",
+    email: "karan@taskflow.com",
+    password: "Karan@123",
+    role: "employee",
+    tasks: [
+      {
+        id: 111,
+        title: "Build Task Filter",
+        employee: "Karan Mehta",
+        description: "Allow users to filter tasks by priority.",
+        priority: "High",
+        dueDate: "2026-10-31",
+        estimatedTime: "4 hours",
+      },
+    ],
+  },
+  {
+    id: 9,
+    name: "Neha Gupta",
+    email: "neha@taskflow.com",
+    password: "Neha@123",
+    role: "employee",
+    tasks: [
+      {
+        id: 112,
+        title: "Create Employee List",
+        employee: "Neha Gupta",
+        description: "Display employees with their names, emails and assigned tasks.",
+        priority: "Moderate",
+        dueDate: "2026-11-03",
+        estimatedTime: "4 hours",
+      },
+      {
+        id: 113,
+        title: "Improve Empty States",
+        employee: "Neha Gupta",
+        description: "Display a helpful message when there are no tasks to show.",
+        priority: "Low",
+        dueDate: "2026-11-07",
+        estimatedTime: "2 hours",
+      },
+    ],
+  },
+  {
+    id: 10,
+    name: "Arjun Das",
+    email: "arjun@taskflow.com",
+    password: "Arjun@123",
+    role: "employee",
+    tasks: [
+      {
+        id: 114,
+        title: "Implement Pagination",
+        employee: "Arjun Das",
+        description: "Display tasks across multiple pages for easier navigation.",
+        priority: "Moderate",
+        dueDate: "2026-11-05",
+        estimatedTime: "5 hours",
+      },
+    ],
+  },
+  {
+    id: 11,
+    name: "Pooja Mishra",
+    email: "pooja@taskflow.com",
+    password: "Pooja@123",
+    role: "employee",
+    tasks: [
+      {
+        id: 115,
+        title: "Test Dashboard",
+        employee: "Pooja Mishra",
+        description: "Test dashboard functionality and fix UI inconsistencies.",
+        priority: "High",
+        dueDate: "2026-10-30",
+        estimatedTime: "4 hours",
+      },
+      {
+        id: 116,
+        title: "Update Documentation",
+        employee: "Pooja Mishra",
+        description: "Document the task management features and usage.",
+        priority: "Low",
+        dueDate: "2026-11-08",
+        estimatedTime: "3 hours",
+      },
+    ],
+  },
+];
+
+const admin=[{
+    id: 1,
+    name: "Admin User",
+    email: "admin@taskflow.com",
+    password: "Admin@123",
+    role: "admin",
+    tasks: [],
+  }]
+export const setLocalStorage=()=>{
+localStorage.setItem('employee',JSON.stringify(employee));
+localStorage.setItem('admin',JSON.stringify(admin))
+}
+export const getLocalStorage=()=>{
+const employee=JSON.parse(localStorage.getItem('employee'));
+const admin=JSON.parse(localStorage.getItem('admin'));
+return {admin,employee}
+}

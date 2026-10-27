@@ -1,8 +1,14 @@
-import {useState} from 'react'
+import {useState,useContext} from 'react'
+import {AuthContext} from './Context/AuthProvider'
 import Login from './components/Auth/Login'
 import EmployeeDashboard from './components/Dashboards/EmployeeDashboard'
 import AdminDashboard from './components/Dashboards/AdminDashboard'
 const App = () => {
+      const authData=useContext(AuthContext);
+      const admin=authData?authData.admin:null;
+      const employee=authData?authData.employee:null;
+        console.log(admin)
+        console.log(employee)
   const [user, setUser] = useState(null);
   const handleLogin=(email,password)=>{
     if(email=='admin@me.in' && password=='123'){
@@ -21,6 +27,7 @@ const App = () => {
       {/* <Login/> */}
       {/* <EmployeeDashboard/> */}
       {!user?<Login handleLogin={handleLogin}/>:''}
+      {user=='Admin'?<AdminDashboard/>:<EmployeeDashboard/>}
       {/* <AdminDashboard/> */}
     </div>
   )
