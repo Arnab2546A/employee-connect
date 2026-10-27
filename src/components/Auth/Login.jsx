@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState} from "react";
+
 const Login = ({handleLogin}) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -11,6 +12,7 @@ const Login = ({handleLogin}) => {
         setEmail('');
         setPassword('');
     }
+  
   return (
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="w-full max-w-sm rounded-xl border border-purple-500/20 bg-[#151520] p-8 shadow-xl shadow-purple-950/20">
