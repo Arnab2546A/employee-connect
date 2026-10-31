@@ -38,11 +38,11 @@ const CreateTask = () => {
 
   const labelClass = "mb-2 block text-sm font-semibold text-gray-200";
   return (
-    <div className="min-h-screen p-4 text-white sm:p-6 lg:p-10">
-      <div className="mx-auto max-w-6xl rounded-2xl border border-purple-500/20 bg-[#10101b] p-5 shadow-2xl shadow-purple-950/10 sm:p-8 lg:p-10">
+    <div className=" px-4 py-4 text-white sm:p-6 sm:py-5 lg:px-8 lg:py-6">
+      <div className="mx-auto max-w-5xl rounded-2xl border border-purple-500/20 bg-[#10101b] p-4 shadow-2xl shadow-purple-950/10 sm:p-6 lg:p-7">
 
         {/* Header */}
-        <div className="mb-9 flex items-center gap-4">
+        <div className="mb-6 flex items-center gap-4">
           <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-purple-600 shadow-lg shadow-purple-900/40">
             <Plus size={30} />
           </div>
@@ -57,7 +57,7 @@ const CreateTask = () => {
           </div>
         </div>
 
-        <form  className="space-y-7" onSubmit={(e)=>{handleSubmit(e)}}>
+        <form  className="space-y-5" onSubmit={(e)=>{handleSubmit(e)}}>
 
           {/* Title and Employee */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -144,10 +144,6 @@ const CreateTask = () => {
     </div>
   </div>
 </div>
-
-
-         
-
           {/* Footer */}
           <div className="flex flex-col-reverse gap-4 border-t border-gray-800 pt-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="flex items-center gap-2 text-xs text-gray-500">
