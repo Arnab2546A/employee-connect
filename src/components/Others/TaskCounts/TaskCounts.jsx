@@ -1,4 +1,3 @@
-import React from "react";
 import {
   ClipboardList,
   CheckCircle2,
@@ -43,8 +42,13 @@ const TaskNavbar = () => {
   ];
 
   return (
-    <nav className="w-full p-4 md:p-6">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <nav className="w-full px-4 py-6 md:px-6">
+      <div className="mx-auto max-w-7xl">
+        <h2 className="mb-5 text-2xl font-bold text-white">
+          Task Summary
+        </h2>
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {tasks.map((task) => {
           const Icon = task.icon;
 
@@ -75,6 +79,7 @@ const TaskNavbar = () => {
             </div>
           );
         })}
+        </div>
       </div>
     </nav>
   );
