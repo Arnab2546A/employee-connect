@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { LoggedInUserContext } from "../../../Context/LoggedInUserContext";
 import NewTask from '../../Task/NewTask'
 import AcceptTask from '../../Task/AcceptTask'
+import FailedTask from '../../Task/FailedTask'
+import CompleteTask from '../../Task/CompleteTask'
 const TaskCards = () => {
   const data = useContext(LoggedInUserContext);
 
@@ -19,6 +21,14 @@ const TaskCards = () => {
 
       {(data?.tasks ?? []).map((task) => (
         task.status==='Accepted' && <AcceptTask task={task} key={task.id}/>
+      ))}
+
+      {(data?.tasks ?? []).map((task) => (
+        task.status==='Failed' && <FailedTask task={task} key={task.id}/>
+      ))}
+
+      {(data?.tasks ?? []).map((task) => (
+        task.status==='Completed' && <CompleteTask task={task} key={task.id}/>
       ))}
     </div>
   </section>
