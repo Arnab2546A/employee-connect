@@ -1,7 +1,9 @@
 import { LogOut, UserCircle } from "lucide-react";
-
+import {useContext} from 'react'
+import {LoggedInUserContext} from '../../../Context/LoggedInUserContext'
 const Header = () => {
-    const role='Admin'
+  const data = useContext(LoggedInUserContext);
+  console.log(data);
   return (
     <header className="w-full px-6 py-4">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
@@ -15,14 +17,13 @@ const Header = () => {
 
           <div className="hidden text-right sm:block">
             <p className="text-sm font-semibold text-white">
-                Arnab
-              {/* {userName} */}
+              {data?data.name:null}
             </p>
 
             <span className={`text-xs font-medium ${
-              role === "Admin" ? "text-purple-400" : "text-green-400"
+              data?(data.role === "admin" ? "text-purple-400" : "text-green-400"):null
             }`}>
-              {role}
+              {data?data.role:null}
             </span>
           </div>
 

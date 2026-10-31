@@ -1,12 +1,15 @@
 
 const employee = [
-  
   {
     id: 2,
     name: "Rahul Sharma",
     email: "rahul@taskflow.com",
     password: "Rahul@123",
     role: "employee",
+    newTask: 1,
+    acceptedTask: 1,
+    completedTask: 0,
+    failedTask: 0,
     tasks: [
       {
         id: 101,
@@ -15,7 +18,7 @@ const employee = [
         description: "Create a responsive login page using React and Tailwind CSS.",
         priority: "High",
         dueDate: "2026-10-30",
-        estimatedTime: "5 hours",
+        status: "New",
       },
       {
         id: 102,
@@ -24,7 +27,7 @@ const employee = [
         description: "Make the navigation bar responsive on mobile devices.",
         priority: "Moderate",
         dueDate: "2026-11-02",
-        estimatedTime: "3 hours",
+        status: "Accepted",
       },
     ],
   },
@@ -34,6 +37,10 @@ const employee = [
     email: "priya@taskflow.com",
     password: "Priya@123",
     role: "employee",
+    newTask: 1,
+    acceptedTask: 0,
+    completedTask: 1,
+    failedTask: 0,
     tasks: [
       {
         id: 103,
@@ -42,7 +49,7 @@ const employee = [
         description: "Build a dashboard with summary cards and recent activity.",
         priority: "High",
         dueDate: "2026-10-31",
-        estimatedTime: "6 hours",
+        status: "Completed",
       },
       {
         id: 104,
@@ -51,7 +58,7 @@ const employee = [
         description: "Create a reusable employee profile card component.",
         priority: "Low",
         dueDate: "2026-11-05",
-        estimatedTime: "2 hours",
+        status: "New",
       },
     ],
   },
@@ -61,6 +68,10 @@ const employee = [
     email: "amit@taskflow.com",
     password: "Amit@123",
     role: "employee",
+    newTask: 0,
+    acceptedTask: 0,
+    completedTask: 0,
+    failedTask: 1,
     tasks: [
       {
         id: 105,
@@ -69,7 +80,7 @@ const employee = [
         description: "Connect the login form to the authentication API.",
         priority: "High",
         dueDate: "2026-10-29",
-        estimatedTime: "4 hours",
+        status: "Failed",
       },
     ],
   },
@@ -79,6 +90,10 @@ const employee = [
     email: "sneha@taskflow.com",
     password: "Sneha@123",
     role: "employee",
+    newTask: 1,
+    acceptedTask: 1,
+    completedTask: 0,
+    failedTask: 0,
     tasks: [
       {
         id: 106,
@@ -87,7 +102,7 @@ const employee = [
         description: "Build a form with title, description, priority and due date.",
         priority: "High",
         dueDate: "2026-10-30",
-        estimatedTime: "4 hours",
+        status: "Accepted",
       },
       {
         id: 107,
@@ -96,7 +111,7 @@ const employee = [
         description: "Validate required fields and display helpful error messages.",
         priority: "Moderate",
         dueDate: "2026-11-03",
-        estimatedTime: "3 hours",
+        status: "New",
       },
     ],
   },
@@ -106,6 +121,10 @@ const employee = [
     email: "vikram@taskflow.com",
     password: "Vikram@123",
     role: "employee",
+    newTask: 0,
+    acceptedTask: 0,
+    completedTask: 1,
+    failedTask: 0,
     tasks: [
       {
         id: 108,
@@ -114,7 +133,7 @@ const employee = [
         description: "Add a search feature to filter tasks by title.",
         priority: "Moderate",
         dueDate: "2026-11-02",
-        estimatedTime: "3 hours",
+        status: "Completed",
       },
     ],
   },
@@ -124,6 +143,10 @@ const employee = [
     email: "ananya@taskflow.com",
     password: "Ananya@123",
     role: "employee",
+    newTask: 1,
+    acceptedTask: 1,
+    completedTask: 0,
+    failedTask: 0,
     tasks: [
       {
         id: 109,
@@ -132,7 +155,7 @@ const employee = [
         description: "Create a reports page displaying task summaries.",
         priority: "Low",
         dueDate: "2026-11-06",
-        estimatedTime: "5 hours",
+        status: "New",
       },
       {
         id: 110,
@@ -141,7 +164,7 @@ const employee = [
         description: "Style badges for pending, in-progress and completed tasks.",
         priority: "Moderate",
         dueDate: "2026-11-04",
-        estimatedTime: "2 hours",
+        status: "Accepted",
       },
     ],
   },
@@ -151,6 +174,10 @@ const employee = [
     email: "karan@taskflow.com",
     password: "Karan@123",
     role: "employee",
+    newTask: 0,
+    acceptedTask: 0,
+    completedTask: 0,
+    failedTask: 1,
     tasks: [
       {
         id: 111,
@@ -159,7 +186,7 @@ const employee = [
         description: "Allow users to filter tasks by priority.",
         priority: "High",
         dueDate: "2026-10-31",
-        estimatedTime: "4 hours",
+        status: "Failed",
       },
     ],
   },
@@ -169,6 +196,10 @@ const employee = [
     email: "neha@taskflow.com",
     password: "Neha@123",
     role: "employee",
+    newTask: 1,
+    acceptedTask: 1,
+    completedTask: 0,
+    failedTask: 0,
     tasks: [
       {
         id: 112,
@@ -177,7 +208,7 @@ const employee = [
         description: "Display employees with their names, emails and assigned tasks.",
         priority: "Moderate",
         dueDate: "2026-11-03",
-        estimatedTime: "4 hours",
+        status: "Accepted",
       },
       {
         id: 113,
@@ -186,7 +217,7 @@ const employee = [
         description: "Display a helpful message when there are no tasks to show.",
         priority: "Low",
         dueDate: "2026-11-07",
-        estimatedTime: "2 hours",
+        status: "New",
       },
     ],
   },
@@ -196,6 +227,10 @@ const employee = [
     email: "arjun@taskflow.com",
     password: "Arjun@123",
     role: "employee",
+    newTask: 0,
+    acceptedTask: 0,
+    completedTask: 1,
+    failedTask: 0,
     tasks: [
       {
         id: 114,
@@ -204,7 +239,7 @@ const employee = [
         description: "Display tasks across multiple pages for easier navigation.",
         priority: "Moderate",
         dueDate: "2026-11-05",
-        estimatedTime: "5 hours",
+        status: "Completed",
       },
     ],
   },
@@ -214,6 +249,10 @@ const employee = [
     email: "pooja@taskflow.com",
     password: "Pooja@123",
     role: "employee",
+    newTask: 0,
+    acceptedTask: 0,
+    completedTask: 1,
+    failedTask: 1,
     tasks: [
       {
         id: 115,
@@ -222,7 +261,7 @@ const employee = [
         description: "Test dashboard functionality and fix UI inconsistencies.",
         priority: "High",
         dueDate: "2026-10-30",
-        estimatedTime: "4 hours",
+        status: "Failed",
       },
       {
         id: 116,
@@ -231,7 +270,7 @@ const employee = [
         description: "Document the task management features and usage.",
         priority: "Low",
         dueDate: "2026-11-08",
-        estimatedTime: "3 hours",
+        status: "Completed",
       },
     ],
   },

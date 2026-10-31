@@ -3,6 +3,7 @@ import {AuthContext} from './Context/AuthProvider'
 import Login from './components/Auth/Login'
 import EmployeeDashboard from './components/Dashboards/EmployeeDashboard'
 import AdminDashboard from './components/Dashboards/AdminDashboard'
+import {LoggedInUserContext} from './Context/LoggedInUserContext'
 const App = () => {
       const authData=useContext(AuthContext);
       const admin=authData?authData.admin:null;
@@ -20,11 +21,13 @@ const App = () => {
       adm=admin.find((e)=>(e.email==email && e.password==password));
     }
     if(adm){
+      localStorage.setItem('loggedInUser',JSON.stringify({role:'Admin'}))
+      setLoggedInUser(adm);
       setUser('Admin');
     }
     else if(emp){
-      setLoggedInUser({role:'employee'})
-      console.log('this is employee');
+      localStorage.setItem('loggedInUser',JSON.stringify({role:'Employee'}))
+      setLoggedInUser(emp);
       setUser("Employee");
       
     }
@@ -36,6 +39,7 @@ const App = () => {
     <div className='min-h-screen bg-[#09090f] text-white'>
       {/* <Login/> */}
       {/* <EmployeeDashboard/> */}
+      <LoggedInUserContext.Provider value={loggedInUser}>
       {!user?<Login handleLogin={handleLogin}/>:''}
       {user === "Admin" ? (
       <AdminDashboard />
@@ -44,6 +48,7 @@ const App = () => {
     ) : (
       ''
     )}
+    </LoggedInUserContext.Provider>
       {/* <EmployeeDashboard/> */}
     </div>
   )
