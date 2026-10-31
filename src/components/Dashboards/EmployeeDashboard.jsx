@@ -1,12 +1,11 @@
 
 import TaskCounts from '../Others/TaskCounts/TaskCounts'
 import TaskCards from '../Others/TaskCards/TaskCards'
+import Header from '../Others/Header/Header'
 const EmployeeDashboard = () => {
   return (
-    <div className='min-h-screen px-4 py-8'>
-        <h1 className="mb-8 text-3xl font-bold text-white text-center md:text-4xl">
-  Employee Dashboard
-</h1>
+    <div className='min-h-screen'>
+        <Header/>
         <TaskCounts/>
         <TaskCards/>
     </div>
