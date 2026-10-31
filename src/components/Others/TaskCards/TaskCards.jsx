@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { LoggedInUserContext } from "../../../Context/LoggedInUserContext";
 import NewTask from '../../Task/NewTask'
-
+import AcceptTask from '../../Task/AcceptTask'
 const TaskCards = () => {
   const data = useContext(LoggedInUserContext);
 
@@ -15,6 +15,10 @@ const TaskCards = () => {
     <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
       {(data?.tasks ?? []).map((task) => (
         task.status==='New' && <NewTask task={task} key={task.id}/>
+      ))}
+
+      {(data?.tasks ?? []).map((task) => (
+        task.status==='Accepted' && <AcceptTask task={task} key={task.id}/>
       ))}
     </div>
   </section>

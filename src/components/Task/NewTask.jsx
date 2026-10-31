@@ -1,4 +1,3 @@
-
 import { CalendarDays } from "lucide-react";
 const NewTask = ({task}) => {
       const priorityStyles = {
