@@ -4,12 +4,14 @@ import {
   CirclePlus,
   CircleX,
 } from "lucide-react";
-
+import {useContext} from 'react'
+import {LoggedInUserContext} from '../../../Context/LoggedInUserContext'
 const TaskNavbar = () => {
+  const data=useContext(LoggedInUserContext);
   const tasks = [
     {
-      title: "Total Tasks",
-      count: 24,
+      title: "Accepted Tasks",
+      count: data.acceptedTask,
       icon: ClipboardList,
       color: "blue",
       style: "border-blue-500/30 bg-blue-500/10",
@@ -17,7 +19,7 @@ const TaskNavbar = () => {
     },
     {
       title: "Completed Tasks",
-      count: 12,
+      count: data.completedTask,
       icon: CheckCircle2,
       color: "green",
       style: "border-green-500/30 bg-green-500/10",
@@ -25,7 +27,7 @@ const TaskNavbar = () => {
     },
     {
       title: "New Tasks",
-      count: 7,
+      count: data.newTask,
       icon: CirclePlus,
       color: "purple",
       style: "border-purple-500/30 bg-purple-500/10",
@@ -33,7 +35,7 @@ const TaskNavbar = () => {
     },
     {
       title: "Failed Tasks",
-      count: 5,
+      count: data.failedTask,
       icon: CircleX,
       color: "red",
       style: "border-red-500/30 bg-red-500/10",
