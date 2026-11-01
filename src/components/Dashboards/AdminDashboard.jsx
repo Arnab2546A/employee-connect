@@ -1,10 +1,10 @@
 import CreateTask from '../Others/CreateTask/CreateTask'
 import Header from '../Others/Header/Header'
-const AdminDashboard = () => {
+const AdminDashboard = ({setIsLoggedIn}) => {
 
   return (
 <div className="min-h-screen bg-[#09090f]">
-      <Header />
+      <Header setIsLoggedIn={setIsLoggedIn}/>
       
       <div>
         <CreateTask />
