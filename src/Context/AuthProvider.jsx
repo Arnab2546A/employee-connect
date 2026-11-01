@@ -10,10 +10,10 @@ const AuthProvider = (props) => {
       setUserData({admin,employee});
     
     }, [])
-    
+
   return (
     <div>
-    <AuthContext.Provider value={userData}>
+    <AuthContext.Provider value={{userData,setUserData}}>
         {props.children}
     </AuthContext.Provider>
     
