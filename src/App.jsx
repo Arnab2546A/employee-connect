@@ -5,14 +5,15 @@ import EmployeeDashboard from './components/Dashboards/EmployeeDashboard'
 import AdminDashboard from './components/Dashboards/AdminDashboard'
 import {LoggedInUserContext} from './Context/LoggedInUserContext'
 const App = () => {
-      const authData=useContext(AuthContext);
+      const data=useContext(AuthContext);
+      const authData=data?data.userData:{employee:null,admin:null}
       const admin=authData?authData.admin:null;
       const employee=authData?authData.employee:null;
         console.log(admin)
         console.log(employee)
   const [user, setUser] = useState(null);
   const [loggedInUser,setLoggedInUser]=useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(null);
   useEffect(() => {
     if(localStorage.getItem('loggedInUser')){
     const {role,data}=JSON.parse(localStorage.getItem('loggedInUser'))

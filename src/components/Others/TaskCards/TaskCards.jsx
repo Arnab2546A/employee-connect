@@ -7,7 +7,7 @@ import CompleteTask from '../../Task/CompleteTask'
 const TaskCards = () => {
   const data = useContext(LoggedInUserContext);
 
-
+  
   return (
     <section className="mx-auto w-full max-w-7xl px-4 py-6 md:px-6">
     <h2 className="mb-5 text-2xl font-bold text-white">
