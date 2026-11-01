@@ -3,7 +3,6 @@ import {useContext} from 'react'
 import {LoggedInUserContext} from '../../../Context/LoggedInUserContext'
 const Header = () => {
   const data = useContext(LoggedInUserContext);
-  console.log(data);
   return (
     <header className="w-full px-6 py-4">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
