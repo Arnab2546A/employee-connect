@@ -1,8 +1,13 @@
 import { LogOut, UserCircle } from "lucide-react";
 import {useContext} from 'react'
 import {LoggedInUserContext} from '../../../Context/LoggedInUserContext'
-const Header = () => {
+const Header = ({setIsLoggedIn}) => {
   const data = useContext(LoggedInUserContext);
+  const logOutUser=()=>{
+    setIsLoggedIn(false)
+    localStorage.removeItem('loggedInUser');
+    console.log('logout function is running')
+  }
   return (
     <header className="w-full px-6 py-4">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
@@ -30,8 +35,9 @@ const Header = () => {
 
           <button
             className="flex items-center gap-2 rounded-lg border border-gray-700 px-3 py-2 text-sm text-gray-300 transition hover:border-red-500 hover:text-red-400"
+            onClick={logOutUser}
           >
-            <LogOut size={17} />
+            <LogOut size={17}/>
             Logout
           </button>
 

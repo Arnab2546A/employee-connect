@@ -57,9 +57,9 @@ const App = () => {
       <LoggedInUserContext.Provider value={loggedInUser}>
       {!user?<Login handleLogin={handleLogin}/>:''}
       {user === "Admin" ? (
-      <AdminDashboard />
+      <AdminDashboard setIsLoggedIn={setIsLoggedIn}/>
     ) : user === "Employee" ? (
-      <EmployeeDashboard />
+      <EmployeeDashboard setIsLoggedIn={setIsLoggedIn}/>
     ) : (
       ''
     )}
