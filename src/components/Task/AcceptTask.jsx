@@ -1,5 +1,8 @@
 import { CalendarDays } from "lucide-react";
-
+import {useContext} from 'react';
+import {AuthContext} from '../../Context/AuthProvider'
+import {LoggedInUserContext} from '../../Context/LoggedInUserContext'
+import {getLocalStorage} from '../../utils/localStorage'
 const AcceptTask = ({ task }) => {
   const priorityStyles = {
     High: "bg-red-500/15 text-red-400 border-red-500/30",
@@ -7,6 +10,22 @@ const AcceptTask = ({ task }) => {
     Low: "bg-green-500/15 text-green-400 border-green-500/30",
   };
 
+  const {loggedInUser,setLoggedInUser}=useContext(LoggedInUserContext)
+  const {userData,setUserData}=useContext(AuthContext)
+  const {employee}=userData;
+  const loggedInData=loggedInUser;
+  const emp=employee.find((e)=>e.name===loggedInUser.name);
+      const handleClick=(e)=>{
+        console.log('Complete is clicked')
+        const firstStorageUpdate=emp.tasks.find((e)=>e.id===task.id)
+        const secondStorageUpdate=loggedInData.tasks.find((e)=>e.id===task.id)
+        firstStorageUpdate.status=e
+        secondStorageUpdate.status=e
+        localStorage.setItem('employee',JSON.stringify(employee));
+        localStorage.setItem('loggedInUser',JSON.stringify({role:'Employee',data:loggedInData}));
+        setUserData(getLocalStorage())
+        setLoggedInUser(JSON.parse(localStorage.getItem('loggedInUser')).data);
+      }
   return (
     <div
       key={task.id}
@@ -45,7 +64,7 @@ const AcceptTask = ({ task }) => {
       <div className="flex flex-col gap-3">
         <button
           type="button"
-          onClick={() => console.log("Task completed:", task.id)}
+          onClick={() => handleClick('Completed')}
           className="w-full rounded-lg bg-green-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-green-500 focus:outline-none"
         >
           Mark as Completed
@@ -53,7 +72,7 @@ const AcceptTask = ({ task }) => {
 
         <button
           type="button"
-          onClick={() => console.log("Task failed:", task.id)}
+          onClick={() => handleClick('Failed')}
           className="w-full rounded-lg bg-red-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-red-500 focus:outline-none"
         >
           Mark as Failed

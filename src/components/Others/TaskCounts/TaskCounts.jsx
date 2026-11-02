@@ -7,11 +7,12 @@ import {
 import {useContext} from 'react'
 import {LoggedInUserContext} from '../../../Context/LoggedInUserContext'
 const TaskNavbar = () => {
-  const data=useContext(LoggedInUserContext);
+  const loggedInData = useContext(LoggedInUserContext);
+  const data=loggedInData.loggedInUser;
   const tasks = [
     {
       title: "Accepted Tasks",
-      count: data.acceptedTask,
+      count: data.tasks.filter((e)=>e.status==='Accepted').length,
       icon: ClipboardList,
       color: "blue",
       style: "border-blue-500/30 bg-blue-500/10",
@@ -19,7 +20,7 @@ const TaskNavbar = () => {
     },
     {
       title: "Completed Tasks",
-      count: data.completedTask,
+      count: data.tasks.filter((e)=>e.status==='Completed').length,
       icon: CheckCircle2,
       color: "green",
       style: "border-green-500/30 bg-green-500/10",
@@ -27,7 +28,7 @@ const TaskNavbar = () => {
     },
     {
       title: "New Tasks",
-      count: data.newTask,
+      count: data.tasks.filter((e)=>e.status==='New').length,
       icon: CirclePlus,
       color: "purple",
       style: "border-purple-500/30 bg-purple-500/10",
@@ -35,7 +36,7 @@ const TaskNavbar = () => {
     },
     {
       title: "Failed Tasks",
-      count: data.failedTask,
+      count: data.tasks.filter((e)=>e.status==='Failed').length,
       icon: CircleX,
       color: "red",
       style: "border-red-500/30 bg-red-500/10",

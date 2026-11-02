@@ -5,8 +5,8 @@ import EmployeeDashboard from './components/Dashboards/EmployeeDashboard'
 import AdminDashboard from './components/Dashboards/AdminDashboard'
 import {LoggedInUserContext} from './Context/LoggedInUserContext'
 const App = () => {
-      const data=useContext(AuthContext);
-      const authData=data?data.userData:{employee:null,admin:null}
+      const d=useContext(AuthContext);
+      const authData=d?d.userData:{employee:null,admin:null}
       const admin=authData?authData.admin:null;
       const employee=authData?authData.employee:null;
         console.log(admin)
@@ -55,7 +55,7 @@ const App = () => {
     <div className='min-h-screen bg-[#09090f] text-white'>
       {/* <Login/> */}
       {/* <EmployeeDashboard/> */}
-      <LoggedInUserContext.Provider value={loggedInUser}>
+      <LoggedInUserContext.Provider value={{loggedInUser,setLoggedInUser}}>
       {!user?<Login handleLogin={handleLogin}/>:''}
       {user === "Admin" ? (
       <AdminDashboard setIsLoggedIn={setIsLoggedIn}/>
