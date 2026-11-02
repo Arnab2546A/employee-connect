@@ -20,6 +20,12 @@ const NewTask = ({task}) => {
         setUserData(getLocalStorage())
         setLoggedInUser(JSON.parse(localStorage.getItem('loggedInUser')).data);
       }
+
+      const dueDate = task.dueDate;
+      const currentDate = new Date().toLocaleDateString("en-CA");
+      if(dueDate<currentDate){
+        handleClick('Failed')
+      }
       const priorityStyles = {
     High: "bg-red-500/15 text-red-400 border-red-500/30",
     Moderate: "bg-orange-500/15 text-orange-400 border-orange-500/30",

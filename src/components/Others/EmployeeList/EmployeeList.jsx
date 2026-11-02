@@ -30,9 +30,9 @@ const EmployeeList = () => {
               <div className="flex items-center gap-2 rounded-lg bg-blue-500/10 p-3">
                 <ClipboardList size={18} className="shrink-0 text-blue-400" />
                 <div>
-                  <p className="text-lg font-bold text-blue-400">
-                    {employee.tasks.filter((e)=>e.status==='Accepted')}
-                  </p>
+                  <div className="text-lg font-bold text-blue-400">
+                    {employee.tasks.filter((e)=>e.status==='Accepted').length}
+                  </div>
                   <p className="text-xs text-gray-400">Active Tasks</p>
                 </div>
               </div>
@@ -41,7 +41,7 @@ const EmployeeList = () => {
                 <CheckCircle2 size={18} className="shrink-0 text-green-400" />
                 <div>
                   <p className="text-lg font-bold text-green-400">
-                    {employee.completedTask}
+                    {employee.tasks.filter((e)=>e.status==='Completed').length}
                   </p>
                   <p className="text-xs text-gray-400">Completed Tasks</p>
                 </div>
