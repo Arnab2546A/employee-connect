@@ -2,7 +2,8 @@ import { LogOut, UserCircle } from "lucide-react";
 import {useContext} from 'react'
 import {LoggedInUserContext} from '../../../Context/LoggedInUserContext'
 const Header = ({setIsLoggedIn}) => {
-  const data = useContext(LoggedInUserContext);
+  const logInData = useContext(LoggedInUserContext);
+  const data=logInData.loggedInUser;
   const logOutUser=()=>{
     setIsLoggedIn(false)
     localStorage.removeItem('loggedInUser');

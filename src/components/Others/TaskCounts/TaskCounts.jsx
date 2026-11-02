@@ -7,7 +7,8 @@ import {
 import {useContext} from 'react'
 import {LoggedInUserContext} from '../../../Context/LoggedInUserContext'
 const TaskNavbar = () => {
-  const data=useContext(LoggedInUserContext);
+  const loggedInData = useContext(LoggedInUserContext);
+  const data=loggedInData.loggedInUser;
   const tasks = [
     {
       title: "Accepted Tasks",

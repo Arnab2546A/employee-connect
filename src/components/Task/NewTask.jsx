@@ -1,5 +1,25 @@
 import { CalendarDays } from "lucide-react";
+import {useContext} from 'react';
+import {AuthContext} from '../../Context/AuthProvider'
+import {LoggedInUserContext} from '../../Context/LoggedInUserContext'
+import {getLocalStorage} from '../../utils/localStorage'
 const NewTask = ({task}) => {
+  const {loggedInUser,setLoggedInUser}=useContext(LoggedInUserContext)
+  const {userData,setUserData}=useContext(AuthContext)
+  const {employee}=userData;
+  const loggedInData=loggedInUser;
+  const emp=employee.find((e)=>e.name===loggedInUser.name);
+      const handleClick=()=>{
+        console.log('accept is clicked')
+        const firstStorageUpdate=emp.tasks.find((e)=>e.id===task.id)
+        const secondStorageUpdate=loggedInData.tasks.find((e)=>e.id===task.id)
+        firstStorageUpdate.status='Accepted'
+        secondStorageUpdate.status='Accepted'
+        localStorage.setItem('employee',JSON.stringify(employee));
+        localStorage.setItem('loggedInUser',JSON.stringify({role:'Employee',data:loggedInData}));
+        setUserData(getLocalStorage())
+        setLoggedInUser(JSON.parse(localStorage.getItem('loggedInUser')).data);
+      }
       const priorityStyles = {
     High: "bg-red-500/15 text-red-400 border-red-500/30",
     Moderate: "bg-orange-500/15 text-orange-400 border-orange-500/30",
@@ -42,7 +62,7 @@ const NewTask = ({task}) => {
 
   <button
     type="button"
-    onClick={() => console.log("Accepted task:", task.id)}
+    onClick={handleClick}
     className="w-full rounded-lg bg-purple-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-purple-500 focus:outline-none"
   >
     Accept
