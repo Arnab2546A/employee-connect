@@ -27,6 +27,12 @@ const CreateTask = () => {
       localStorage.setItem('employee',JSON.stringify(employee));
       setUserData(getLocalStorage())
      }
+     else{
+      alert('No such employee exists')
+     }
+    }
+    else{
+      alert('No employee exists...company is bankrupted 🥲')
     }
   }
   const handleSubmit = (e) => {

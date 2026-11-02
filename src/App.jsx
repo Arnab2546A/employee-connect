@@ -14,6 +14,7 @@ const App = () => {
   const [user, setUser] = useState(null);
   const [loggedInUser,setLoggedInUser]=useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(null);
+  const [initialize, setInitialize] = useState(true);
   useEffect(() => {
     if(localStorage.getItem('loggedInUser')){
     const {role,data}=JSON.parse(localStorage.getItem('loggedInUser'))
@@ -28,8 +29,12 @@ const App = () => {
     else{
       setUser(null)
     }
+    setInitialize(false);
   }, [isLoggedIn])
   
+  if(initialize){
+    return '';
+  }
   const handleLogin=(email,password)=>{
     let emp,adm;
     if(employee){
