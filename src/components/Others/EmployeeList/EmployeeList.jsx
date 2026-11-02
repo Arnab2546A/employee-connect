@@ -31,7 +31,7 @@ const EmployeeList = () => {
                 <ClipboardList size={18} className="shrink-0 text-blue-400" />
                 <div>
                   <p className="text-lg font-bold text-blue-400">
-                    {employee.acceptedTask}
+                    {/* {employee.tasks.filter((e)=>e.status==='Accepted')} */}
                   </p>
                   <p className="text-xs text-gray-400">Active Tasks</p>
                 </div>
